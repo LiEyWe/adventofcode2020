@@ -26,7 +26,6 @@ fn main() -> std::io::Result<()> {
 
     'outer: for x in &numbers {
         for y in &numbers {
-
             let wanted = 2020 - x - y;
             if numbers.contains(&wanted) {
                 println!("Part Two: {}", wanted * x * y);
