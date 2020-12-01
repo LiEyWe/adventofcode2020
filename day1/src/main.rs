@@ -24,22 +24,13 @@ fn main() -> std::io::Result<()> {
 
     // Part Two
 
-    let mut finished = false;
-
-    for x in &numbers {
-        if finished {
-            break;
-        }
-
+    'outer: for x in &numbers {
         for y in &numbers {
-            if finished {
-                break;
-            }
 
             let wanted = 2020 - x - y;
             if numbers.contains(&wanted) {
                 println!("Part Two: {}", wanted * x * y);
-                finished = true;
+                break 'outer;
             }
         }
     }
